@@ -1,13 +1,14 @@
 import './App.css';
 import React from 'react';
 import SlickSlider from './SlickSlider';
+import TopSwiper from './TopSwiper';
 
 
 function App() {
     return (
         <div className = "App">
-
-            <SlickSlider/>
+            <TopSwiper/>
+           {/*<SlickSlider/>*/}
         </div>
     );
 }
