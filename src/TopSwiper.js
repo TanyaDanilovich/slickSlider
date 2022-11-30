@@ -1,5 +1,6 @@
 import React from 'react';
 import 'swiper/css';
+import classes from "./TopSwiper.module.css"
 
 
 // import required modules
@@ -13,8 +14,8 @@ export default function TopSwiper() {
     const swiperSlides = url.map((img) => {
         return (
             <SwiperSlide key = {img}>
-                <div className = "slideContaner">
-                    <video autoPlay loop playsInline muted
+                <div className = ''>
+                    <video  className={classes.videoContent} autoPlay loop playsInline muted
                            src = "https://static.sybaritejewellery.com/video/home_page.webm"
                            type = "video/mp4">
                         <source src = "https://static.sybaritejewellery.com/video/home_page.webm" type = "video/mp4"/>
@@ -24,16 +25,16 @@ export default function TopSwiper() {
         )
     })
     return (
-        <>
+        <div className = {classes.topSwiperWrapper}>
             <Swiper
                 loop = {true}
                 modules = {[Autoplay]}
-                className = "topSwiper"
+                className = {classes.topSwiper}
                 autoplay = {{delay: 3000}}
                 onSlideChange = {s => s.autoplay.run()}
             >
                 {swiperSlides}
             </Swiper>
-        </>
+        </div>
     );
 }
